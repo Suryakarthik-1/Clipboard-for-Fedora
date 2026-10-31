@@ -1,0 +1,8 @@
+PyQt6==6.7.1
+PyQt6-Qt6==6.7.1
+pynput==1.7.7
+aiosqlite==0.20.0
+Pillow==10.4.0
+python-xlib==0.33
+psutil==6.0.0
+tomli==2.0.1; python_version < "3.11"

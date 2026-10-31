@@ -1,0 +1,220 @@
+/* ui/themes/dark.qss — Windows 11-style dark theme for Clipman */
+
+/* ── Main panel ─────────────────────────────────────────────────────────── */
+QWidget#ClipmanPanel {
+    background-color: #202020;
+    border: 1px solid #3a3a3a;
+    border-radius: 12px;
+}
+
+/* ── Search bar ─────────────────────────────────────────────────────────── */
+QLineEdit#SearchBar {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border: 1px solid #404040;
+    border-radius: 6px;
+    padding: 6px 10px 6px 32px;   /* left padding leaves room for icon */
+    font-size: 13px;
+    selection-background-color: #0078d4;
+}
+QLineEdit#SearchBar:focus {
+    border-color: #0078d4;
+}
+QLineEdit#SearchBar::placeholder {
+    color: #888888;
+}
+
+/* ── Scroll area / list ─────────────────────────────────────────────────── */
+QScrollArea#ItemList {
+    background-color: transparent;
+    border: none;
+}
+QScrollBar:vertical {
+    background: transparent;
+    width: 6px;
+    margin: 0;
+}
+QScrollBar::handle:vertical {
+    background: #555555;
+    border-radius: 3px;
+    min-height: 24px;
+}
+QScrollBar::handle:vertical:hover {
+    background: #777777;
+}
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* ── Item card ──────────────────────────────────────────────────────────── */
+QFrame#ItemCard {
+    background-color: #2a2a2a;
+    border: 1px solid #383838;
+    border-radius: 8px;
+    margin: 2px 4px;
+}
+QFrame#ItemCard:hover {
+    background-color: #303030;
+    border-color: #505050;
+}
+QFrame#ItemCard[selected="true"] {
+    background-color: #0f3a5e;
+    border-color: #0078d4;
+}
+QFrame#ItemCard[pinned="true"] {
+    border-left: 3px solid #0078d4;
+}
+
+/* Card text content */
+QLabel#CardPreview {
+    color: #e0e0e0;
+    font-size: 13px;
+    background: transparent;
+}
+QLabel#CardMeta {
+    color: #888888;
+    font-size: 11px;
+    background: transparent;
+}
+QLabel#CardCategory {
+    color: #aaaaaa;
+    font-size: 10px;
+    background: transparent;
+}
+
+/* Card action buttons */
+QPushButton#CardPin,
+QPushButton#CardDelete {
+    background: transparent;
+    border: none;
+    color: #888888;
+    font-size: 14px;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+QPushButton#CardPin:hover {
+    color: #0078d4;
+    background-color: #1a1a1a;
+}
+QPushButton#CardDelete:hover {
+    color: #e74856;
+    background-color: #1a1a1a;
+}
+QPushButton#CardPin[pinned="true"] {
+    color: #0078d4;
+}
+
+/* ── Section headers (PINNED / TODAY / OLDER) ───────────────────────────── */
+QLabel#SectionHeader {
+    color: #666666;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 4px 8px 2px 8px;
+    background: transparent;
+}
+
+/* ── Bottom toolbar ─────────────────────────────────────────────────────── */
+QWidget#Toolbar {
+    background-color: #252525;
+    border-top: 1px solid #383838;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+QPushButton#BtnClearAll {
+    background: transparent;
+    color: #888888;
+    border: none;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+QPushButton#BtnClearAll:hover {
+    color: #e74856;
+    background-color: #2d2020;
+}
+QPushButton#BtnPause {
+    background: transparent;
+    color: #888888;
+    border: 1px solid #444444;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+QPushButton#BtnPause:hover {
+    color: #ffffff;
+    border-color: #0078d4;
+    background-color: #1a2a3a;
+}
+QPushButton#BtnPause[paused="true"] {
+    color: #f0a30a;
+    border-color: #f0a30a;
+}
+QPushButton#BtnSettings {
+    background: transparent;
+    color: #888888;
+    border: none;
+    font-size: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+QPushButton#BtnSettings:hover {
+    color: #ffffff;
+    background-color: #333333;
+}
+
+/* ── Category badge ─────────────────────────────────────────────────────── */
+QLabel#BadgeURL      { color: #3cc4ef; }
+QLabel#BadgeCode     { color: #89d185; }
+QLabel#BadgeColor    { color: #e5c07b; }
+QLabel#BadgeFilepath { color: #c678dd; }
+QLabel#BadgeImage    { color: #e06c75; }
+QLabel#BadgeEmail    { color: #56b6c2; }
+QLabel#BadgeText     { color: #888888; }
+
+/* ── "No items" placeholder ─────────────────────────────────────────────── */
+QLabel#EmptyLabel {
+    color: #555555;
+    font-size: 14px;
+    background: transparent;
+}
+
+/* ── Settings dialog ────────────────────────────────────────────────────── */
+QDialog#SettingsDialog {
+    background-color: #202020;
+}
+QDialog#SettingsDialog QLabel {
+    color: #cccccc;
+}
+QDialog#SettingsDialog QCheckBox {
+    color: #cccccc;
+    spacing: 6px;
+}
+QDialog#SettingsDialog QSpinBox,
+QDialog#SettingsDialog QComboBox,
+QDialog#SettingsDialog QLineEdit {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+QDialog#SettingsDialog QPushButton {
+    background-color: #0078d4;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 18px;
+    font-size: 13px;
+}
+QDialog#SettingsDialog QPushButton:hover {
+    background-color: #106ebe;
+}
+QDialog#SettingsDialog QPushButton#BtnCancel {
+    background-color: #333333;
+    color: #cccccc;
+}
+QDialog#SettingsDialog QPushButton#BtnCancel:hover {
+    background-color: #444444;
+}

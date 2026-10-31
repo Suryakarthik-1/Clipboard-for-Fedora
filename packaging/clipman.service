@@ -1,0 +1,11 @@
+[Unit]
+Description=Clipman - Windows-style Clipboard Manager
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/local/bin/clipman
+Restart=always
+User=thanos
+
+[Install]
+WantedBy=multi-user.target
